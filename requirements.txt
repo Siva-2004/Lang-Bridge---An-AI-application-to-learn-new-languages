@@ -1,0 +1,7 @@
+streamlit
+gtts
+SpeechRecognition
+langchain
+langchain-google-genai
+langchain-community
+pyaudio
