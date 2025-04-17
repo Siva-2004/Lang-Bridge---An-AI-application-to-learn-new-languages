@@ -9,7 +9,7 @@ from langchain.schema.output_parser import StrOutputParser
 
 print("perfect!!")
 
-GOOGLE_API_KEY = "AIzaSyDkXqEuLWK9Ek7UGYoQuZoIhUHUi9mUcXk"
+GOOGLE_API_KEY = st.secrets("GOOGLE_API")
 
 
 
@@ -45,7 +45,7 @@ def llm(user_text , ll, kl):
     )
 
     msgs = StreamlitChatMessageHistory(key="langchain_messages")
-    model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key = "AIzaSyDkXqEuLWK9Ek7UGYoQuZoIhUHUi9mUcXk")
+    model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key = st.secrets("GOOGLE_API"))
     chain = prompt | model | StrOutputParser()
     chain_with_history = RunnableWithMessageHistory(
         chain,
@@ -90,7 +90,7 @@ def enact_llm(user_text,scenario,ll):
     )
 
     msgs = StreamlitChatMessageHistory(key="langchain_messages")
-    model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key = "AIzaSyDkXqEuLWK9Ek7UGYoQuZoIhUHUi9mUcXk")
+    model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key = st.secrets("GOOGLE_API"))
     chain = prompt | model | StrOutputParser()
     chain_with_history = RunnableWithMessageHistory(
         chain,
