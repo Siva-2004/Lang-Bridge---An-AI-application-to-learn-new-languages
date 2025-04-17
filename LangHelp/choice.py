@@ -5,7 +5,7 @@ from langchain.prompts import ChatPromptTemplate
 
 def study(topic , ll , kl):
     st.subheader(topic)
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key = "AIzaSyDkXqEuLWK9Ek7UGYoQuZoIhUHUi9mUcXk")
+    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key = st.secrets("GOOGLE_API"))
     if topic != "history": 
         system_template = "Give only the markdown code for a table containing translations of atleast or more than 15 common and unique words of following topic only in three columns {learn_language}, phonetic representation and {known_language} repectively."
         prompt = ChatPromptTemplate.from_messages(
