@@ -4,7 +4,7 @@ import process
 
 def enact():
     
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key = "AIzaSyDkXqEuLWK9Ek7UGYoQuZoIhUHUi9mUcXk")
+    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key = st.secrets("GOOGLE_API"))
     ll = st.selectbox("Learning Language",["Chinese","Japanese","French","Korean","Spanish","German","Dutch","Hindi","Tamil","Telugu","English","Kannada","Marathi","Bengali","Vietnamese","Tagalog","Portuguese","urdu","Turkish","Arabic","Malayalam"], index = None )
     scenario = st.selectbox("Select Scenario",["Ordering a Dish","Meeting an Old friend","Asking for directions","Booking a Travel ticket at counter","Buying Groceries at a store"],index = None)
     
